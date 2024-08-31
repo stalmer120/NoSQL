@@ -1,4 +1,4 @@
-# NoSQL
+# NoSQL ![otus](https://github.com/stalmer120/NoSQL/blob/main/png/logo2022-otus.svg)
 
 NoSQL OTUS
 
