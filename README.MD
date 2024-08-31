@@ -1,3 +1,4 @@
+![nosql-curse](https://github.com/stalmer120/NoSQL/blob/main/png/nosql-curse-otus.png)
 # NoSQL ![otus](https://github.com/stalmer120/NoSQL/blob/main/png/logo2022-otus.svg)
 
 NoSQL OTUS
