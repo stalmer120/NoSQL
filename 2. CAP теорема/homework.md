@@ -14,4 +14,4 @@
 
 А вот алгоритмы, которые удовлетворяют хотя бы двум свойствам, можно нарисовать на диаграмма Венна:
 
-![Distributed-cap](https://github.com/stalmer120/NoSQL/blob/main/2.%20CAP%20%D1%82%D0%B5%D0%BE%D1%80%D0%B5%D0%BC%D0%B0/Distributed-cap.png)
+![Distributed-cap](https://github.com/stalmer120/NoSQL/blob/main/png/CAP.drawio.png)
