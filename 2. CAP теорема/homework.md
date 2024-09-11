@@ -18,11 +18,13 @@
 
 ## PostgresQL
 
-CAP теорема не очень подходит для отказоустйчивых кластеров PostgreSQL
+CAP теорема не очень подходит для отказоустйчивых кластеров PostgreSQL, больше подходит PACELC
 
 Kак пример можно рассмотреть связку PostgreSQL+Patroni+VIP-manager
 
 ![Distributed-cap](https://github.com/stalmer120/NoSQL/blob/main/png/PostgresCluster.nosql.drawio.png)
+
+HA cluster PostgreSQL на patroni относится к системам, которые стремятся обеспечить высокую доступность и устойчивость к разделению сети. Это значит, что они могут временно терять согласованность данных для поддержания высокой доступности и восстанавливать согласованность при возможности. VIP-manager обеспечивает доступность.
 
 ## MongoDB
 
