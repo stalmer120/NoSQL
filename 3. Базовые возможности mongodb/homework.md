@@ -13,7 +13,7 @@
 Схема *Primary - Secondaries - Hiddens*
 
 >rs.conf()
-```css
+```js
 {
   _id: 'rs01',
   version: 6,
@@ -163,7 +163,7 @@ https://github.com/ozlerhakan/mongodb-json-files/blob/master/datasets/countries-
 mongoimport --authenticationDatabase=admin --username mongo-root --password passw0rd --db countries-big --collection stb1 --file /vagrant/ansible/countries-big.json
 
 >db.stats()
-```
+```js
 {
   db: 'countries-big',
   collections: Long('1'),
@@ -196,7 +196,7 @@ mongoimport --authenticationDatabase=admin --username mongo-root --password pass
 *  **find**
 
 >db.stb1.find().limit(3)
-```
+```js
 [
   {
     _id: ObjectId('55a0f1d420a4d760b5fbdbd7'),
@@ -220,7 +220,7 @@ mongoimport --authenticationDatabase=admin --username mongo-root --password pass
 ```
 
 >db.stb1.find({'Country Name': 'Россия'})
-```
+```js
 [
   {
     _id: ObjectId('55a0f1d420a4d760b5fc1f04'),
@@ -249,7 +249,7 @@ mongoimport --authenticationDatabase=admin --username mongo-root --password pass
 >*Insert на primary чтение с Hidden*
 
 >db.stb1.find(db.stb1.insertMany([ {"Country Name":"Мумитролия","Language":"ru","ISO":"MU"}, {"Country Name":"Muumimaailma","Language":"fi","ISO":"MU"}, {"Country Name":"Mumintroll","Language":"sv","ISO":"MU"} ])
-```
+```js
 {
   acknowledged: true,
   insertedIds: {
@@ -261,7 +261,7 @@ mongoimport --authenticationDatabase=admin --username mongo-root --password pass
 ```
 
 >db.stb1.find(db.stb1.find({"ISO":"MU"}))
-```
+```js
 db.stb1.find({"ISO":"MU"})
 [
   {
@@ -289,7 +289,7 @@ db.stb1.find({"ISO":"MU"})
 *  **Update**
 
 >db.stb1.updateOne({'Country Name': 'Mumintroll'},{$set: {'Country Name': 'ムーミン', "Language":"ja"}})
-```
+```js
 {
   acknowledged: true,
   insertedId: null,
@@ -300,7 +300,7 @@ db.stb1.find({"ISO":"MU"})
 ```
 
 >db.stb1.find({"ISO":"MU"})
-```
+```js
 [
   {
     _id: ObjectId('66eabd0a2332c81490964033'),
