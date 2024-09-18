@@ -248,7 +248,7 @@ mongoimport --authenticationDatabase=admin --username mongo-root --password pass
 > [!NOTE]
 >*Insert на primary чтение с Hidden*
 
->db.stb1.find(db.stb1.insertMany([ {"Country Name":"Мумитролия","Language":"ru","ISO":"MU"}, {"Country Name":"Muumimaailma","Language":"fi","ISO":"MU"}, {"Country Name":"Mumintroll","Language":"sv","ISO":"MU"} ])
+>db.stb1.insertMany([ {"Country Name":"Мумитролия","Language":"ru","ISO":"MU"}, {"Country Name":"Muumimaailma","Language":"fi","ISO":"MU"}, {"Country Name":"Mumintroll","Language":"sv","ISO":"MU"} ])
 ```js
 {
   acknowledged: true,
@@ -260,7 +260,7 @@ mongoimport --authenticationDatabase=admin --username mongo-root --password pass
 }
 ```
 
->db.stb1.find(db.stb1.find({"ISO":"MU"}))
+>db.stb1.find({"ISO":"MU"})
 ```js
 db.stb1.find({"ISO":"MU"})
 [
