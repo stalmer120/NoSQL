@@ -12,10 +12,8 @@
 
 Схема *Primary - Secondaries - Hiddens*
 
-<code style="color : green"> **rs.conf()** </code>
-
-
-```
+>rs.conf()
+```css
 {
   _id: 'rs01',
   version: 6,
@@ -71,10 +69,9 @@
 }
 ```
 
-<code style="color : green"> **rs.status()**</code>
+>rs.status()
 
-
-```
+```js
   members: [
     {
       _id: 0,
@@ -165,8 +162,7 @@ https://github.com/ozlerhakan/mongodb-json-files/blob/master/datasets/countries-
 
 mongoimport --authenticationDatabase=admin --username mongo-root --password passw0rd --db countries-big --collection stb1 --file /vagrant/ansible/countries-big.json
 
-<code style="color : green">**db.stats()**</code>
-
+>db.stats()
 ```
 {
   db: 'countries-big',
@@ -199,8 +195,7 @@ mongoimport --authenticationDatabase=admin --username mongo-root --password pass
 
 *  **find**
 
-<code style="color : green">**db.stb1.find().limit(3)**</code>
-
+>db.stb1.find().limit(3)
 ```
 [
   {
@@ -224,8 +219,7 @@ mongoimport --authenticationDatabase=admin --username mongo-root --password pass
 ]
 ```
 
-<code style="color : green">**db.stb1.find({'Country Name': 'Россия'})**</code>
-
+>db.stb1.find({'Country Name': 'Россия'})
 ```
 [
   {
@@ -251,10 +245,10 @@ mongoimport --authenticationDatabase=admin --username mongo-root --password pass
 
 *  **insert**
 
-*Insert на primary чтение с Hidden*
+> [!NOTE]
+>*Insert на primary чтение с Hidden*
 
-<code style="color : green">**db.stb1.insertMany([ {"Country Name":"Мумитролия","Language":"ru","ISO":"MU"}, {"Country Name":"Muumimaailma","Language":"fi","ISO":"MU"}, {"Country Name":"Mumintroll","Language":"sv","ISO":"MU"} ])**</code>
-
+>db.stb1.find(db.stb1.insertMany([ {"Country Name":"Мумитролия","Language":"ru","ISO":"MU"}, {"Country Name":"Muumimaailma","Language":"fi","ISO":"MU"}, {"Country Name":"Mumintroll","Language":"sv","ISO":"MU"} ])
 ```
 {
   acknowledged: true,
@@ -265,9 +259,8 @@ mongoimport --authenticationDatabase=admin --username mongo-root --password pass
   }
 }
 ```
-<code style="color : green">**db.stb1.find({"ISO":"MU"})**</code>
 
-
+>db.stb1.find(db.stb1.find({"ISO":"MU"}))
 ```
 db.stb1.find({"ISO":"MU"})
 [
@@ -295,8 +288,7 @@ db.stb1.find({"ISO":"MU"})
 
 *  **Update**
 
-<code style="color : green">**db.stb1.updateOne({'Country Name': 'Mumintroll'},{$set: {'Country Name': 'ムーミン', "Language":"ja"}})**</code>
- 
+>db.stb1.updateOne({'Country Name': 'Mumintroll'},{$set: {'Country Name': 'ムーミン', "Language":"ja"}})
 ```
 {
   acknowledged: true,
@@ -307,9 +299,7 @@ db.stb1.find({"ISO":"MU"})
 }
 ```
 
-<code style="color : green">**db.stb1.find({"ISO":"MU"})**</code>
-
-
+>db.stb1.find({"ISO":"MU"})
 ```
 [
   {
