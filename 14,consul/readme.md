@@ -2,7 +2,7 @@
 
 ## Тестовая среда
 
-**etcd 3.4.18, 5 nodes**.
+**etcd 5 nodes**.
 
 Сборка:
 ````bash
@@ -153,7 +153,7 @@ Error: context deadline exceeded
 
 ## Тестовая среда
 
-**Consul 1.12.2, 3 nodes**.
+**Consul 3 nodes**.
 
 Сборка:
 ````bash
